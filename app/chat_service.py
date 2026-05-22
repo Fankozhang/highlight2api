@@ -107,6 +107,7 @@ async def stream_generator(
                                             ],
                                         }
                                         yield {"data": json.dumps(initial_chunk)}
+                                        is_send_initial_chunk = True
 
                                     chunk_data = {
                                         "id": response_id,

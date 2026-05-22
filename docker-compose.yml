@@ -1,7 +1,11 @@
-version: '3.8'
-
 services:
   highlight2api:
     build: .
+    container_name: highlight2api
     ports:
-      - "8080:8080"
+      - "9999:8080"
+    volumes:
+      - ./config:/app/config
+    environment:
+      - DEBUG=false
+    restart: unless-stopped
